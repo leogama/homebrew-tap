@@ -24,6 +24,10 @@ cask 'handy-outliner' do
     EOS
   end
 
+  postflight do
+    set_permissions "#{staged_path}/handyoutliner_#{version}/start-macos", 'a+x'
+  end
+
   caveats <<~EOS
     To run this app, type 'handy-outliner' in terminal.
   EOS
